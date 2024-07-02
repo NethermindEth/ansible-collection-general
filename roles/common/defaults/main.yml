@@ -4,6 +4,7 @@
 
 # Install common required packages
 common_install_packages: false
+common_update_sshd_config: false
 
 ##################
 # Configurations #
@@ -11,5 +12,14 @@ common_install_packages: false
 
 # Packages to install
 common_required_packages:
-  - "openssh-server"
-  - "openssh-client"
+  - name: "openssh-server"
+    state: "latest"
+  - name: "openssh-client"
+    state: "latest"
+
+# sshd configurations to apply
+common_sshd_config_file_path: "/etc/ssh/sshd_config"
+common_sshd_configuration:
+  # Mitigation to ssh July 1, 2024 issues. See https://www.openssh.com/security.html
+  - name: "LoginGraceTime"
+    value: "0"

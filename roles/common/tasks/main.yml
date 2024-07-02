@@ -3,3 +3,8 @@
   ansible.builtin.include_tasks:
     file: sub-tasks/install-packages.yml
   when: common_install_packages is defined and (common_install_packages | bool)
+
+- name: Update sshd config
+  ansible.builtin.include_tasks:
+    file: sub-tasks/update-sshd-config.yml
+  when: common_update_sshd_config is defined and (common_update_sshd_config | bool)

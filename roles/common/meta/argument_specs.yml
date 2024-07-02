@@ -8,3 +8,7 @@
         description: Install common required packages
         type: bool
         default: false
+      common_update_sshd_config:
+        description: Update sshd config
+        type: bool
+        default: false

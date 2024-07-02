@@ -1,0 +1,10 @@
+﻿---
+- name: Update sshd config
+  become: true
+  ansible.builtin.lineinfile:
+    path: "{{ common_sshd_config_file_path }}"
+    line: "{{ item.name }} {{ item.value }}"
+    state: present
+    regexp: "^(# *)?{{ item.name }}.*"
+  loop: "{{ common_sshd_configuration }}"
+  notify: restart sshd
