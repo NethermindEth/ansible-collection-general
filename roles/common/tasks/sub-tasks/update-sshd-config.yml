@@ -7,4 +7,4 @@
     state: present
     regexp: "^(# *)?{{ item.name }}.*"
   loop: "{{ common_sshd_configuration }}"
-  notify: restart sshd
+  notify: restart ssh
