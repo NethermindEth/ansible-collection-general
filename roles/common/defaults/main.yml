@@ -1,0 +1,15 @@
+#############
+# Arguments #
+#############
+
+# Install common required packages
+common_install_packages: false
+
+##################
+# Configurations #
+##################
+
+# Packages to install
+common_required_packages:
+  - "openssh-server"
+  - "openssh-client"

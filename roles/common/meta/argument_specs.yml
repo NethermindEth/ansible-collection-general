@@ -1,0 +1,10 @@
+﻿argument_specs:
+  main:
+    short_description: Main entrypoint for common role
+    description:
+      - Setups common configuration for all hosts.
+    options:
+      common_install_packages:
+        description: Install common required packages
+        type: bool
+        default: false

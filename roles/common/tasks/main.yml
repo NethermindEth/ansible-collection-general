@@ -1,0 +1,5 @@
+---
+- name: Install required packages
+  ansible.builtin.include_tasks:
+    file: sub-tasks/install-packages.yml
+  when: common_install_packages is defined and (common_install_packages | bool)

@@ -1,0 +1,6 @@
+﻿---
+- name: Install Packages
+  ansible.builtin.package:
+    name: "{{ item }}"
+    state: latest
+  loop: "{{ common_required_packages }}"
