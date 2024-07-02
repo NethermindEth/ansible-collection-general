@@ -1,5 +1,6 @@
 ﻿---
 - name: Install Packages
+  become: true
   ansible.builtin.package:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
